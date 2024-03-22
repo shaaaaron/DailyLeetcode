@@ -1,0 +1,9 @@
+# 忽略Cmake输出的文件夹，但不忽略py_code
+*/
+
+# 在远端删除.vscode
+.vscode/
+*.txt
+*.exe
+*.bat
+*.zip
