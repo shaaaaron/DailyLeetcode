@@ -28,3 +28,5 @@ for file in "${prefix}."*; do
         echo "Appended content to $file based on its file extension."
     fi
 done
+
+sleep 1
