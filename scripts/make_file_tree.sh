@@ -31,7 +31,7 @@ count_files() {
     done
 
     # 构建当前目录的信息字符串
-    local dir_info="$indent$(basename "$dir") ($count)"
+    local dir_info="$indent- $(basename "$dir") ($count)"
     # 将当前目录信息和子目录信息合并
     echo -e "$count\n$dir_info\n$subdir_info"
 }
@@ -72,5 +72,6 @@ append_to_readme() {
 # 主逻辑
 echo "Appending folder tree to $readmeFile..."
 append_to_readme "$readmeFile" "$outputFile"
+rm "$outputFile"
 echo "Folder tree has been appended to $readmeFile."
 # sleep 5
