@@ -1,7 +1,8 @@
 # DailyLeetcode
 
 scripts/add_main.sh 向文件末尾写入main函数入口，调用方法./scripts/add_main.sh 2549 (题目标号)
-
+scripts/make_file_tree.sh 向README.md末尾写入文件树，如果已写进行覆盖
+> scripts/count_files.sh 统计文件夹下所有文件（包括嵌套文件的数目），调用方法./scripts/count_files.sh <PATH>
 ## 刷题目标
 
 - [ ] 动态规划：30题
@@ -24,3 +25,12 @@ scripts/add_main.sh 向文件末尾写入main函数入口，调用方法./script
 - 312
 - 638
 - 1049
+
+------------------------
+下面是文件树内容
+------------------------
+DailyLeetcode (53)
+    scripts (3)
+    动态规划 (31)
+        背包问题 (6)
+    每日一题 (6)
