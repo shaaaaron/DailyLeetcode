@@ -15,10 +15,12 @@ scripts/add_main.sh 向文件末尾写入main函数入口，调用方法./script
 - [灵神的笔记：专题讲义、题单和周赛](https://github.com/EndlessCheng): 每个专题有讲解
 - [宫水三叶-SharingSource/LogicStack-LeetCode Wiki (github.com)](https://github.com/SharingSource/LogicStack-LeetCode/wiki/记忆化搜索)
 - [代码随想录 (programmercarl.com)](https://www.programmercarl.com/动态规划理论基础.html#算法公开课)
+- [LeetCode Cheatsheet - @力扣加加 (leetcode-pp.github.io)](https://leetcode-pp.github.io/leetcode-cheat/?tab=solution-template)：代码模板和时间复杂度
 
 ## 看了答案但还没动笔
 
-- 1997
 - 808
 - 10
 - 312
+- 638
+- 1049
