@@ -27,6 +27,7 @@ using namespace std;
 // @lc code=start
 class Solution {
 public:
+// 使用双端队列
     string reverse(string str){
         string ans=str;
         char ch;

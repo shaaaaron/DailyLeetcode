@@ -27,6 +27,7 @@ using namespace std;
 // @lc code=start
 class Solution {
 public:
+// 看看记忆化搜索怎么做
     bool wordBreak(string s, vector<string>& wordDict) {
         // 重要的是想清楚状态怎么表示，前i个能不能表示，太天才了
         int n=s.size();
