@@ -57,7 +57,7 @@ append_to_readme() {
     if grep -q -- "$separator" "$readme"; then
         # 存在分隔符，覆盖这一行之后的内容
         # 先获取分隔符之前的内容（包括分隔符）
-        sed -i'' "/^$separator/,\$d" "$readme"
+        sed -i '' "/^$separator/,\$d" "$readme"
         echo "$separator" >> "$readme"
         echo "下面是文件树内容" >> "$readme"
         echo "$separator" >> "$readme"
