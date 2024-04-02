@@ -42,7 +42,7 @@ class Solution(object):
     def combinationSum(self, candidates, target):
         dp=[[] for _ in range(target+1)] # [1, tar]
 
-        # 是不是完全背包？区别在什么地方？
+        # 是不是完全背包？区别在什么地方？ 区别在于前者求的是最大值，现在的求的方法数，确实有席位区别，需要体会一下
         # 先遍历不同数字，再遍历不同目标
         # 先遍历物品，再遍历目标
         for can in candidates:
@@ -60,6 +60,8 @@ class Solution(object):
         return dp[target]
 # @lc code=end
 
+# 一般的背包问题
+    # 在这个问题的动态规划解法中，f[i] 表示容量为 i 的背包能够装入物品的最大价值
 
 
 #
