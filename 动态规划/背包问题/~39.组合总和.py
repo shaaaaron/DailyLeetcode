@@ -1,0 +1,79 @@
+#
+# @lc app=leetcode.cn id=39 lang=python
+# @lcpr version=30121
+#
+# [39] 组合总和
+#
+
+
+# @lcpr-template-start
+
+# @lcpr-template-end
+# @lc code=start
+class Solution(object):
+    # def combinationSum(self, candidates, target):
+    #     """
+    #     :type candidates: List[int]
+    #     :type target: int
+    #     :rtype: List[List[int]]
+    #     """
+    #     candidates=sorted(candidates) # 是否需要
+
+    #     dp=[[] for _ in range(target+1)]
+    #     # dp[0]=[] #默认为1
+    #     for can in candidates:
+    #         if can<= target:
+    #             dp[can] = [[can]]   # 注意下标
+
+    #     # print(dp) 这是python有用的地方
+    #     for i in range(1, target+1):
+    #         for can in candidates:
+    #             if i-can<0:
+    #                 continue
+                
+    #             for tmplist in dp[i-can]:
+    #                 dp[i].append(tmplist+[can])
+        
+    #     dp[target] = [sorted(_) for _ in dp[target]]
+
+    #     return list(set(tuple(sublist) for sublist in dp[target])) #list是不可hash的，如果set去重需要转化为tuple
+    #     # return list(set(dp[target]))
+    
+    def combinationSum(self, candidates, target):
+        dp=[[] for _ in range(target+1)] # [1, tar]
+
+        # 是不是完全背包？区别在什么地方？
+        # 先遍历不同数字，再遍历不同目标
+        # 先遍历物品，再遍历目标
+        for can in candidates:
+
+            for j in range(1, target+1):
+                if j-can<0:
+                    continue
+
+                if j== can:
+                    dp[j].append([can])
+                else:
+                    for tmplist in dp[j-can]:
+                        dp[j].append(tmplist+[can])
+
+        return dp[target]
+# @lc code=end
+
+
+
+#
+# @lcpr case=start
+# [2,3,6,7]\n3\n
+# @lcpr case=end
+
+# @lcpr case=start
+# [2,3,5]\n8\n
+# @lcpr case=end
+
+# @lcpr case=start
+# [2]\n1\n
+# @lcpr case=end
+
+#
+
