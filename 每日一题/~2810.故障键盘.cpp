@@ -55,7 +55,7 @@ public:
             
         }
 
-        if(INum){
+        if(INum){ // 核心在最后的特殊处理，体会max和inverse在特殊处理上的区别
             if(INum%2==1){
                 ans=reverse(ans); // 
             }

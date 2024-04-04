@@ -30,6 +30,7 @@ class Solution(object):
             # 也可以直接使用a[i]-a[i-1]计算当前大小
             lastHindx=hInx
         maxH=max(maxH, h-lastHindx) # 最后一个在循环结束之后计算一次
+        # 和2810有点像，主要是最后的特殊处理
 
         lastWindx=0
         maxW=-1
