@@ -6,9 +6,9 @@ scripts/make_file_tree.sh 向README.md末尾写入文件树，如果已写进行
 ## 刷题目标
 
 - [ ] 动态规划：30题
-- [ ] 单调栈
+- [x] 单调栈
     - [x] [代码随想录：题单](https://programmercarl.com/0739.%E6%AF%8F%E6%97%A5%E6%B8%A9%E5%BA%A6.html#%E7%AE%97%E6%B3%95%E5%85%AC%E5%BC%80%E8%AF%BE)
-    - [ ] [宫水三叶：题单](https://github.com/SharingSource/LogicStack-LeetCode/wiki/%E5%8D%95%E8%B0%83%E6%A0%88)
+    - [x] [宫水三叶：题单](https://github.com/SharingSource/LogicStack-LeetCode/wiki/%E5%8D%95%E8%B0%83%E6%A0%88)
 - [ ] 前缀和
 
 ## 参考资料
