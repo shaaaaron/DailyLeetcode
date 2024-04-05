@@ -75,7 +75,7 @@ public:
             if(subobj.isInteger()){
                 ans.push_back(subobj.getInteger()); // 可以直接将结果放到val数组，不用再dfs赋值
             }else{
-                vector<int> tmp=dfs(subobj.getList()); // 不能见const传给非const函数。但是leetcode不会报错
+                vector<int> tmp=dfs(subobj.getList()); // vscode提示不能将const传给非const函数。但是leetcode运行时不会报错
                 for(auto num:tmp){
                     ans.push_back(num);
                 }
