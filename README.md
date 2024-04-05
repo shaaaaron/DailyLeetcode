@@ -4,7 +4,9 @@ scripts/add_main.sh 向文件末尾写入main函数入口，调用方法./script
 scripts/make_file_tree.sh 向README.md末尾写入文件树，如果已写进行覆盖
 > scripts/count_files.sh 统计文件夹下所有文件（包括嵌套文件的数目），调用方法./scripts/count_files.sh <PATH>
 ## 刷题目标
-
+已经可以做困难了
+- [x] 栈
+    - [x] [代码随想录：题单](https://www.programmercarl.com/%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80.html)
 - [ ] 动态规划：30题
 - [x] 单调栈
     - [x] [代码随想录：题单](https://programmercarl.com/0739.%E6%AF%8F%E6%97%A5%E6%B8%A9%E5%BA%A6.html#%E7%AE%97%E6%B3%95%E5%85%AC%E5%BC%80%E8%AF%BE)

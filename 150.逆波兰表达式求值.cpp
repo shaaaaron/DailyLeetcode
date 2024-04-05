@@ -44,7 +44,7 @@ public:
     int evalRPN(vector<string>& tokens) {
         stack<int> s;
 
-        auto getTwoNum = [&]() -> std::tuple<int, int> { // 访问房前作用域中的所有变量
+        auto getTwoNum = [&]() -> std::tuple<int, int> { // 访问房前作用域中的所有变量，返回值写法有点奇怪
             int y = s.top(); s.pop();
             int x = s.top(); s.pop();
             return {x, y}; // 返回一个包含两个整数的tuple
