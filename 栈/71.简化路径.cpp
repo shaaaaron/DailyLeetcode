@@ -33,11 +33,11 @@ public:
         int n=path.size();
         int i=0,j;
         while(i<n){
-            if(path[i] != '/'){ // 不看斜杠只看内容
+            if(path[i] != '/'){ //不是以斜杠为边界的子串，而是都不为边界的子串，更好实现
                 j=i;
                 while(j<n && path[j]!='/'){
                     j++;
-                }j--;//实际的边界
+                }j--;//实际的边界，[i,j]是不含斜杠的子串
                 //substr长度为非负数，因为类型是size_t
                 string command=path.substr(i,j-i+1);
 

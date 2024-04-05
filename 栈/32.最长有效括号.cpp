@@ -29,7 +29,7 @@ class Solution {
 public:
     int longestValidParentheses(string s) {
         stack<int> st; // 用0表示左括号，其他表示实际的封闭括号数量
-        int ans=0; // tmp1表示已经封闭，tmp2表示还没有封闭
+        int ans=0; // tmp1表示已经封闭，tmp2表示还没有封闭，实际不能用有限个元素
 
         // 可以证明如果一段）比（多则不可
         // "(()(()(()" 关键在于如何有效存储其中的封闭括号书，使用变量不够，要放在栈中

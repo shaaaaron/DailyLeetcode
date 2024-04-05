@@ -35,7 +35,7 @@ public:
                 stc.push(t);
             }else {
                 if(stc.empty()||stc.top()=='('&&t!=')'||stc.top()=='{'&&t!='}'||stc.top()=='['&&t!=']')return 0;
-                stc.pop();
+                stc.pop();  // 右括号不需要进栈
             }
         }
         if(stc.empty())return 1;

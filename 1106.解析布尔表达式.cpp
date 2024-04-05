@@ -27,6 +27,7 @@ using namespace std;
 // @lc code=start
 class Solution {
 public:
+// 本题因为有括号规约所以比较好写，难写的需要使用双栈
     bool parseBoolExpr(string expression) {
         stack<char> st; // 用st不会和字符串混淆
         int i=0, n=expression.size();
@@ -36,7 +37,7 @@ public:
                 bool tmp;
                 while(st.top()!='('){
                     tmp=st.top()=='t'?true:false;
-                    and_ans=and_ans&&tmp;
+                    and_ans=and_ans&&tmp; // 小trick
                     or_ans=or_ans||tmp;
                     st.pop();
                 }
