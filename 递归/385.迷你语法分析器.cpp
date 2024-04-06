@@ -121,7 +121,7 @@ public:
                 i=j;
             }else if(s[i]=='['){
                 int commaNum=0;
-                while(j<n-1){ // python字符计算
+                while(j<n-1){ 
                     if( s[j]=='['){
                         commaNum++;
                     }else if(s[j]==']'){
@@ -132,7 +132,7 @@ public:
                     }
                     j++;
                 }
-                ans.add((deserialize(s.substr(i,j-i+1))));
+                ans.add(deserialize(s.substr(i,j-i+1)));
 
                 i=j;
             }
