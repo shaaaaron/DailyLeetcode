@@ -3,6 +3,10 @@
 scripts/add_main.sh 向文件末尾写入main函数入口，调用方法./scripts/add_main.sh 2549 (题目标号)
 scripts/make_file_tree.sh 向README.md末尾写入文件树，如果已写进行覆盖
 > scripts/count_files.sh 统计文件夹下所有文件（包括嵌套文件的数目），调用方法./scripts/count_files.sh <PATH>
+
+主要用python，适当熟悉C++的相关语法。python优点在于
+- 调试方便，可以直接打印（嵌套）列表、字典、链表等结构
+
 ## 刷题目标
 已经可以做困难了
 - [ ] 链表
@@ -27,6 +31,7 @@ scripts/make_file_tree.sh 向README.md末尾写入文件树，如果已写进行
 - [ ] 回溯 
 - [ ] 图论
 - [ ] 前缀和
+- [ ] 排序/选择
 
 ## 参考资料
 
@@ -45,6 +50,7 @@ scripts/make_file_tree.sh 向README.md末尾写入文件树，如果已写进行
 - 638
 - 1049
 - 39/139 看下记忆化搜索怎么做
+- 215 看下快速排序、快速选择怎么做
 bash里面有个跨平台的问题需要fix
 
 ------------------------
