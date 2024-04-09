@@ -33,24 +33,17 @@ public:
         
         ans[0]=0;
         int tmpLen=1; // 当前数的长度为1 
-        bool quitflag = false;
         while(1){
-            // cout<<"tmpLen: "<<tmpLen<<endl;
-            for(int i=1<<(tmpLen-1); i<= (1<<tmpLen) -1;i++){ // 能不能左移-1？
-            
-                // cout<<"i: "<<i<<endl;
+            for(int i=1<<(tmpLen-1); i<= (1<<tmpLen) -1;i++){ // c++的左移位数必须是非负的，不能左移-1
                 if(i>n){
-                    quitflag=true;
-                    break;
+                    return ans;
                 }
                 ans[i] = ans[i-(1<<(tmpLen-1))]+1; // 运算顺序
             }
-            if(quitflag){ // 两重循环的break不能漏。有没有更好的写法
-                break;
-            }
             tmpLen++;
         }
-        return ans;
+
+        return ans; // 实际不会用到这里
     }
 };
 // @lc code=end

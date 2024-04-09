@@ -8,10 +8,10 @@ scripts/make_file_tree.sh 向README.md末尾写入文件树，如果已写进行
 - 调试方便，可以直接打印（嵌套）列表、字典、链表等结构
 
 ## 刷题目标
-已经可以做困难了
+下面部分模块没有代码随想录
 - [ ] 链表
     - [x] [代码随想录：题单](https://www.programmercarl.com/%E9%93%BE%E8%A1%A8%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80.html#%E9%93%BE%E8%A1%A8%E7%9A%84%E7%B1%BB%E5%9E%8B)
-    - [ ] [宫水三叶：题单](https://github.com/SharingSource/LogicStack-LeetCode/wiki/%E9%93%BE%E8%A1%A8) 链表题目感觉已经做够了，25后面有的题目暂时没做，后续有空可以挑其中难的做一下
+    - [ ] [宫水三叶：题单](https://github.com/SharingSource/LogicStack-LeetCode/wiki/%E9%93%BE%E8%A1%A8) 链表题目感觉已经做够了，61及后面的题目没做，后续有空可以挑其中难的做一下
 - [x] 栈
     - [x] [代码随想录：题单](https://www.programmercarl.com/%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80.html)
     - [x] [宫水三叶：题单](https://github.com/SharingSource/LogicStack-LeetCode/wiki/%E6%A0%88)
@@ -24,14 +24,18 @@ scripts/make_file_tree.sh 向README.md末尾写入文件树，如果已写进行
 - [x] 单调队列
     - [x] 代码随想录无
     - [x] [宫水三叶：题单](https://github.com/SharingSource/LogicStack-LeetCode/wiki/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97)
-
 - [ ] 二分 
-- [ ] 动态规划
+    - [x] [宫水三叶：题单](https://github.com/SharingSource/LogicStack-LeetCode/wiki/%E4%BA%8C%E5%88%86) 基础二分已经做够了，352及后面的题目没做，后续有空可做
 - [ ] 二叉树
+
+- [ ] 动态规划
 - [ ] 回溯 
 - [ ] 图论
 - [ ] 前缀和
 - [ ] 排序/选择
+- [ ] 并查集
+- [ ] 贪心
+- [ ] 滑动窗口
 
 ## 参考资料
 
@@ -41,6 +45,7 @@ scripts/make_file_tree.sh 向README.md末尾写入文件树，如果已写进行
 - [宫水三叶-SharingSource/LogicStack-LeetCode Wiki (github.com)](https://github.com/SharingSource/LogicStack-LeetCode/wiki/记忆化搜索)
 - [代码随想录 (programmercarl.com)](https://www.programmercarl.com/动态规划理论基础.html#算法公开课)
 - [LeetCode Cheatsheet - @力扣加加 (leetcode-pp.github.io)](https://leetcode-pp.github.io/leetcode-cheat/?tab=solution-template)：代码模板和时间复杂度
+- [fucking-algorithm](https://github.com/labuladong/fucking-algorithm/tree/master/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97)
 
 ## 看了答案但还没动笔
 
@@ -51,6 +56,7 @@ scripts/make_file_tree.sh 向README.md末尾写入文件树，如果已写进行
 - 1049
 - 39/139 看下记忆化搜索怎么做
 - 215 看下快速排序、快速选择怎么做
+- 352
 bash里面有个跨平台的问题需要fix
 
 ------------------------

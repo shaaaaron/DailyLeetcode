@@ -1,8 +1,8 @@
 /*
- * @lc app=leetcode.cn id=53 lang=cpp
+ * @lc app=leetcode.cn id=278 lang=cpp
  * @lcpr version=30121
  *
- * [53] 最大子数组和
+ * [278] 第一个错误的版本
  */
 
 
@@ -25,23 +25,24 @@ using namespace std;
 #include <vector>
 // @lcpr-template-end
 // @lc code=start
+// The API isBadVersion is defined for you.
+// bool isBadVersion(int version);
+
 class Solution {
 public:
-    int maxSubArray(vector<int>& nums) {
-        int frontier = 0; // 当前子数组前面的最大连续子数组
-        int ansTmp = nums[0];
-        int n = nums.size();
+    int firstBadVersion(int n) {
+        int lower=1,higher=n;
 
-        for(int i=0;i<n;i++){
-            if(frontier+nums[i]>ansTmp) ansTmp = frontier+nums[i];
-            if(frontier+nums[i]>0){
-                frontier = frontier+nums[i];
+        while(lower<=higher){
+            int middle=lower+(higher-lower)/2;
+            if(isBadVersion(middle)==true){
+                higher=middle-1;
             }else{
-                frontier = 0;
+                lower=middle+1;
             }
         }
 
-        return ansTmp;
+        return lower;
     }
 };
 // @lc code=end
@@ -50,15 +51,14 @@ public:
 
 /*
 // @lcpr case=start
-// [-2,1,-3,4,-1,2,1,-5,4]\n
+// 2126753390\n1702766719\n
+// @lcpr case=end
+// @lcpr case=start
+// 5\n4\n
 // @lcpr case=end
 
 // @lcpr case=start
-// [1]\n
-// @lcpr case=end
-
-// @lcpr case=start
-// [5,4,-1,7,8]\n
+// 1\n1\n
 // @lcpr case=end
 
  */
