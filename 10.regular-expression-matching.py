@@ -44,7 +44,7 @@ class Solution(object):
             if i+1<len(s) and s[i+1]=="*":    # python中双引号和单引号没有区别，都可以用来比较单个字符
                 star = True
 
-            
+                
         if i==len(s) and j==len(p):
             return True
         return False
