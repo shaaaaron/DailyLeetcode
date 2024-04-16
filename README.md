@@ -38,7 +38,7 @@ scripts/make_file_tree.sh 向README.md末尾写入文件树，如果已写进行
 - [ ] 滑动窗口
 
 ## 参考资料
-
+- [leetcode周赛排名估计](https://lccn.lbao.site)
 - [OI Wiki (oi-wiki.org)](https://oi-wiki.org/ds/monotonous-stack/)
 - [azl的数据结构与算法：含讲义](https://github.com/azl397985856/leetcode/blob/master/thinkings/dynamic-programming.md)：进行每个专题之前可以先看这个，有清晰的讲解
 - [灵神的笔记：专题讲义、题单和周赛](https://github.com/EndlessCheng): 每个专题有讲解
