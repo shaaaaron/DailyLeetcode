@@ -26,16 +26,19 @@ scripts/make_file_tree.sh 向README.md末尾写入文件树，如果已写进行
     - [x] [宫水三叶：题单](https://github.com/SharingSource/LogicStack-LeetCode/wiki/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97)
 - [ ] 二分 
     - [ ] [宫水三叶：题单](https://github.com/SharingSource/LogicStack-LeetCode/wiki/%E4%BA%8C%E5%88%86) 基础二分已经做够了，352及后面的题目没做，后续有空可做
-- [ ] 二叉树
+- [x] 二叉树 
+    - [x] [代码随想录：提单](https://programmercarl.com/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80.html)
+- [x] 回溯 
+    - [x] [代码随想录：提单](https://programmercarl.com/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80.html#%E9%A2%98%E7%9B%AE%E5%88%86%E7%B1%BB)
+- [x] 贪心
+    - [x] [代码随想录：提单](https://programmercarl.com/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80.html#%E7%AE%97%E6%B3%95%E5%85%AC%E5%BC%80%E8%AF%BE)
 
-- [ ] 动态规划
-- [ ] 回溯 
 - [ ] 图论
+- [ ] 动态规划
 - [ ] 前缀和
 - [ ] 排序/选择
 - [ ] 并查集
-- [ ] 贪心
-- [ ] 滑动窗口
+- [ ] 滑动窗口/双指针
 
 ## 参考资料
 - [leetcode周赛排名估计](https://lccn.lbao.site)
