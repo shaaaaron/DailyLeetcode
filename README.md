@@ -27,14 +27,14 @@ scripts/make_file_tree.sh 向README.md末尾写入文件树，如果已写进行
 - [ ] 二分 
     - [ ] [宫水三叶：题单](https://github.com/SharingSource/LogicStack-LeetCode/wiki/%E4%BA%8C%E5%88%86) 基础二分已经做够了，352及后面的题目没做，后续有空可做
 - [ ] 二叉树
-
-- [ ] 动态规划
+    - [x] [代码随想录：题单](https://www.programmercarl.com/0669.%E4%BF%AE%E5%89%AA%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91.html#%E6%80%9D%E8%B7%AF) 
 - [ ] 回溯 
+- [ ] 贪心
+- [ ] 动态规划
 - [ ] 图论
 - [ ] 前缀和
 - [ ] 排序/选择
 - [ ] 并查集
-- [ ] 贪心
 - [ ] 滑动窗口
 
 ## 参考资料
@@ -57,6 +57,7 @@ scripts/make_file_tree.sh 向README.md末尾写入文件树，如果已写进行
 - 39/139 看下记忆化搜索怎么做
 - 215 看下快速排序、快速选择怎么做
 - 352
+- 669
 bash里面有个跨平台的问题需要fix
 
 ------------------------

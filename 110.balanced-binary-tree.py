@@ -22,7 +22,7 @@ class Solution(object):
             return 0
         
         left_depth = self.depth(root.left)
-        right_depth = self.depth(root.right)
+        right_depth = self.depth(root.right)    # 可以遇到了-1直接返回
 
         if left_depth == -1 or right_depth == -1:   # 如果左右子树中存在非平衡，则非平衡
             return -1
@@ -33,7 +33,7 @@ class Solution(object):
         return max(right_depth, left_depth)+1    
 
 
-    def isBalanced(self, root):
+    def isBalanced(self, root): # 由于平衡二叉树的计算需要高度，所以另外写一个计算高度和平衡的函数
         """
         :type root: TreeNode
         :rtype: bool
