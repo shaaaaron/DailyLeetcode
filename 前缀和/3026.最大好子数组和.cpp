@@ -30,7 +30,7 @@ public:
     long long maximumSubarraySum(vector<int>& nums, int k) {
         unordered_map<int, int> memo; // 根据数找到保留的索引
         vector<long long> sums(nums.size()+1);
-        long long ans=LONG_LONG_MIN; //
+        long long ans=LONG_LONG_MIN ; //你妈的
         for(int i=1;i<sums.size();i++){
             sums[i]=sums[i-1]+nums[i-1];
         }
@@ -44,7 +44,7 @@ public:
             }
 
             if(memo.find(nums[i]) != memo.end()){
-                if(sums[i+1]- sums[memo.at(nums[i])]<0){
+                if(sums[i]- sums[memo.at(nums[i])]<0){
                     memo[nums[i]]=i;
                 }
             }else{
@@ -55,6 +55,7 @@ public:
         return ans;
     }
 };
+// [-1,-10,9,-10,9,-2,8,-6,8,-9,7,10,-4,-7,7,-8]
 // @lc code=end
 
 
