@@ -36,7 +36,7 @@ public:
 
     vector<vector<int>> ans;
 
-    // 有两钟bt方式，一种是bt下一个数，一种是bt当前的有几个
+    // 有两种bt方式，一种是bt下一个数，一种是bt当前的有几个
     void bt(int k){// 当前可使用的第一个物体的索引
         if(nowsum==target){ // 放在出界的前面
             ans.push_back(now);

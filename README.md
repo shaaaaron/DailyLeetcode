@@ -33,25 +33,34 @@ scripts/make_file_tree.sh 向README.md末尾写入文件树，如果已写进行
 - [x] 贪心
     - [x] [代码随想录：提单](https://programmercarl.com/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80.html#%E7%AE%97%E6%B3%95%E5%85%AC%E5%BC%80%E8%AF%BE)
 
+- [ ] 前缀和
 - [ ] 图论
 - [ ] 动态规划
-- [ ] 前缀和
 - [ ] 排序/选择
 - [ ] 并查集
 - [ ] 滑动窗口/双指针
+- [ ] 堆
+- [ ] 约瑟夫环
+- [ ] 脑经急转弯
+- [ ] 分治
+- [ ] 数学
+- [ ] 位运算
+- [ ] 构造
 
 ## 参考资料
 - [leetcode周赛排名估计](https://lccn.lbao.site)
 - [OI Wiki (oi-wiki.org)](https://oi-wiki.org/ds/monotonous-stack/)
-- [azl的数据结构与算法：含讲义](https://github.com/azl397985856/leetcode/blob/master/thinkings/dynamic-programming.md)：进行每个专题之前可以先看这个，有清晰的讲解
 - [灵神的笔记：专题讲义、题单和周赛](https://github.com/EndlessCheng): 每个专题有讲解
 - [宫水三叶-SharingSource/LogicStack-LeetCode Wiki (github.com)](https://github.com/SharingSource/LogicStack-LeetCode/wiki/记忆化搜索)
-- [代码随想录 (programmercarl.com)](https://www.programmercarl.com/动态规划理论基础.html#算法公开课)
+- [代码随想录 (programmercarl.com)](htntps://www.programmercarl.com/动态规划理论基础.html#算法公开课)
+
+下面的一般，但也有参考价值
+- [azl的数据结构与算法：含讲义](https://github.com/azl397985856/leetcode/blob/master/thinkings/dynamic-programming.md)
 - [LeetCode Cheatsheet - @力扣加加 (leetcode-pp.github.io)](https://leetcode-pp.github.io/leetcode-cheat/?tab=solution-template)：代码模板和时间复杂度
 - [fucking-algorithm](https://github.com/labuladong/fucking-algorithm/tree/master/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97)
 
 ## 看了答案但还没动笔
-
+- 周赛的最后一题
 - 808
 - 10
 - 312
@@ -66,7 +75,7 @@ bash里面有个跨平台的问题需要fix
 ------------------------
 下面是文件树内容
 ------------------------
-- DailyLeetcode (202)
+- DailyLeetcode (220)
     - scripts (3)
     - 并查集 (1)
     - 递归 (2)
@@ -76,11 +85,14 @@ bash里面有个跨平台的问题需要fix
     - 二分 (12)
     - 哈希 (1)
     - 滑动窗口 (2)
+    - 回溯 (4)
     - 简单归档 (1)
     - 链表 (12)
     - 每日一题 (10)
+    - 模拟 (1)
     - 排序 (2)
     - 其他 (1)
+    - 前缀和 (10)
     - 数据结构 (19)
         - 单调队列 (0)
         - 单调栈 (5)
@@ -88,5 +100,5 @@ bash里面有个跨平台的问题需要fix
         - 队列 (4)
         - 栈 (9)
     - 图 (1)
-    - 周赛 (3)
+    - 周赛 (6)
 
