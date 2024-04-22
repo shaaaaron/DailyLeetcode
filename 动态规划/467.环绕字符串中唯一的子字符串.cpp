@@ -35,10 +35,8 @@ public:
     int findSubstringInWraproundString(string s) {
         int n = s.size();
 
-        int count[26]={0};  // 第一维是单词的序号，第二维是单词序列的最大长度
-                            // 不变量
-                            // 太天才了
-        // for(int i=0;i<26;i++)cout<<count[i]<<", ";
+        int count[26]={0};  // 太天才了
+                            
         // 初始化没问题
         char firstChat;
         int strLen;         // 遍历到当前字符，字符串的长度
@@ -53,8 +51,8 @@ public:
 
         int ans=0;
         for(int i=0;i<26;i++){
-            if(count[i]>0) // 重要
-            ans+= count[i];
+            if(count[i]>0)
+                ans+= count[i];
         }
         return ans;
     }
