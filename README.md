@@ -1,5 +1,7 @@
 # DailyLeetcode
 
+做完题看解答，即使题目简单答案也可以学习
+
 scripts/add_main.sh 向文件末尾写入main函数入口，调用方法./scripts/add_main.sh 2549 (题目标号)
 scripts/make_file_tree.sh 向README.md末尾写入文件树，如果已写进行覆盖
 > scripts/count_files.sh 统计文件夹下所有文件（包括嵌套文件的数目），调用方法./scripts/count_files.sh <PATH>
@@ -33,6 +35,7 @@ scripts/make_file_tree.sh 向README.md末尾写入文件树，如果已写进行
 - [x] 贪心
     - [x] [代码随想录：提单](https://programmercarl.com/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80.html#%E7%AE%97%E6%B3%95%E5%85%AC%E5%BC%80%E8%AF%BE)
 
+- [ ] 位运算
 - [ ] 前缀和
 - [ ] 图论
 - [ ] 动态规划
@@ -44,7 +47,6 @@ scripts/make_file_tree.sh 向README.md末尾写入文件树，如果已写进行
 - [ ] 脑经急转弯
 - [ ] 分治
 - [ ] 数学
-- [ ] 位运算
 - [ ] 构造
 
 ## 参考资料
