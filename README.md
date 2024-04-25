@@ -29,25 +29,28 @@ scripts/make_file_tree.sh 向README.md末尾写入文件树，如果已写进行
 - [ ] 二分 
     - [ ] [宫水三叶：题单](https://github.com/SharingSource/LogicStack-LeetCode/wiki/%E4%BA%8C%E5%88%86) 基础二分已经做够了，352及后面的题目没做，后续有空可做
 - [x] 二叉树 
-    - [x] [代码随想录：提单](https://programmercarl.com/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80.html)
+    - [x] [代码随想录：题单](https://programmercarl.com/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80.html)
 - [x] 回溯 
-    - [x] [代码随想录：提单](https://programmercarl.com/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80.html#%E9%A2%98%E7%9B%AE%E5%88%86%E7%B1%BB)
+    - [x] [代码随想录：题单](https://programmercarl.com/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80.html#%E9%A2%98%E7%9B%AE%E5%88%86%E7%B1%BB)
 - [x] 贪心
-    - [x] [代码随想录：提单](https://programmercarl.com/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80.html#%E7%AE%97%E6%B3%95%E5%85%AC%E5%BC%80%E8%AF%BE)
+    - [x] [代码随想录：题单](https://programmercarl.com/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80.html#%E7%AE%97%E6%B3%95%E5%85%AC%E5%BC%80%E8%AF%BE)
 
+- [ ] 滑动窗口/双指针
+    - [ ] [灵茶山艾府：题单](https://leetcode.cn/circle/discuss/0viNMK/)
 - [ ] 位运算
 - [ ] 前缀和
+- [ ] 脑筋急转弯
 - [ ] 图论
 - [ ] 动态规划
 - [ ] 排序/选择
 - [ ] 并查集
-- [ ] 滑动窗口/双指针
 - [ ] 堆
 - [ ] 约瑟夫环
-- [ ] 脑经急转弯
 - [ ] 分治
 - [ ] 数学
+- [ ] 数论
 - [ ] 构造
+- [ ] 博弈论
 
 ## 参考资料
 - [leetcode周赛排名估计](https://lccn.lbao.site)
@@ -57,6 +60,7 @@ scripts/make_file_tree.sh 向README.md末尾写入文件树，如果已写进行
 - [代码随想录 (programmercarl.com)](htntps://www.programmercarl.com/动态规划理论基础.html#算法公开课)
 
 下面的一般，但也有参考价值
+- [题单](https://github.com/doocs/leetcode?tab=readme-ov-file)
 - [azl的数据结构与算法：含讲义](https://github.com/azl397985856/leetcode/blob/master/thinkings/dynamic-programming.md)
 - [LeetCode Cheatsheet - @力扣加加 (leetcode-pp.github.io)](https://leetcode-pp.github.io/leetcode-cheat/?tab=solution-template)：代码模板和时间复杂度
 - [fucking-algorithm](https://github.com/labuladong/fucking-algorithm/tree/master/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97)
