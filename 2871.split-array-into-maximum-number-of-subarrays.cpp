@@ -1,8 +1,8 @@
 /*
- * @lc app=leetcode.cn id=2275 lang=cpp
+ * @lc app=leetcode.cn id=2871 lang=cpp
  * @lcpr version=30122
  *
- * [2275] 按位与结果大于零的最长组合
+ * [2871] 将数组分割成最多数目的子数组
  */
 
 
@@ -27,23 +27,25 @@ using namespace std;
 // @lc code=start
 class Solution {
 public:
-// 思路有点绕，用了抽屉原理，想一下写出来
-    int largestCombination(vector<int>& candidates) {
-        vector<int> memo(31);
-        for(int num:candidates){
-            for(int bit=0;bit<31;bit++){
-                if((num&1<<bit)==0){
-                    memo[bit]++;
+    int maxSubarrays(vector<int>& nums) {
+        int i=0,j;
+        int ans=0;
+
+        while(i< nums.size()){
+            j=i;
+            int tmp=-1; // 全1
+            while(j<nums.size()){
+                tmp&=nums[j];
+                j++;
+
+                if(tmp==0){
+                    ans++;
+                    break;
                 }
             }
+            i=j;
         }
-
-        int ans=INT_MAX;
-        for(int i=0;i<31;i++){
-            ans=min(ans, memo[i]);
-        }
-
-        return candidates.size()-ans;
+        return ans==0 ? 1: ans;
     }
 };
 // @lc code=end
@@ -52,11 +54,11 @@ public:
 
 /*
 // @lcpr case=start
-// [16,17,71,62,12,24,14]\n
+// [1,0,2,0,1,2]\n
 // @lcpr case=end
 
 // @lcpr case=start
-// [8,8]\n
+// [5,7,1,3]\n
 // @lcpr case=end
 
  */

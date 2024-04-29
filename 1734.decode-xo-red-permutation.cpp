@@ -1,8 +1,8 @@
 /*
- * @lc app=leetcode.cn id=2275 lang=cpp
+ * @lc app=leetcode.cn id=1734 lang=cpp
  * @lcpr version=30122
  *
- * [2275] 按位与结果大于零的最长组合
+ * [1734] 解码异或后的排列
  */
 
 
@@ -27,23 +27,26 @@ using namespace std;
 // @lc code=start
 class Solution {
 public:
-// 思路有点绕，用了抽屉原理，想一下写出来
-    int largestCombination(vector<int>& candidates) {
-        vector<int> memo(31);
-        for(int num:candidates){
-            for(int bit=0;bit<31;bit++){
-                if((num&1<<bit)==0){
-                    memo[bit]++;
-                }
+    vector<int> decode(vector<int>& encoded) {
+        int n=encoded.size()+1;
+        vector<int> ori(n);
+
+        int res=0;
+        for(int i=0;i<encoded.size();i++){
+            if(i%2==0){
+                res^=encoded[i];
             }
         }
-
-        int ans=INT_MAX;
-        for(int i=0;i<31;i++){
-            ans=min(ans, memo[i]);
+        for(int i=1;i<=n;i++){
+            res^=i;
         }
 
-        return candidates.size()-ans;
+        ori[n-1]=res;
+
+        for(int i=n-2;i>=0;i--){
+            ori[i]=encoded[i]^ori[i+1];
+        }
+        return ori;
     }
 };
 // @lc code=end
@@ -52,11 +55,11 @@ public:
 
 /*
 // @lcpr case=start
-// [16,17,71,62,12,24,14]\n
+// [3,1]\n
 // @lcpr case=end
 
 // @lcpr case=start
-// [8,8]\n
+// [6,5,4,6]\n
 // @lcpr case=end
 
  */

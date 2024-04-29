@@ -1,8 +1,8 @@
 /*
- * @lc app=leetcode.cn id=2275 lang=cpp
+ * @lc app=leetcode.cn id=2411 lang=cpp
  * @lcpr version=30122
  *
- * [2275] 按位与结果大于零的最长组合
+ * [2411] 按位或最大的最小子数组长度
  */
 
 
@@ -27,23 +27,25 @@ using namespace std;
 // @lc code=start
 class Solution {
 public:
-// 思路有点绕，用了抽屉原理，想一下写出来
-    int largestCombination(vector<int>& candidates) {
-        vector<int> memo(31);
-        for(int num:candidates){
+    vector<int> smallestSubarrays(vector<int>& nums) {
+        unordered_map<int, int >memo;
+
+        vector<int> ans;
+        for(int i=nums.size()-1;i>=0;i--){
+            int remo_idx=i;
             for(int bit=0;bit<31;bit++){
-                if((num&1<<bit)==0){
-                    memo[bit]++;
+                if( (1<<bit & nums[i])==0 && memo.find(bit)!=memo.end()){//
+                    remo_idx=max(remo_idx, memo[bit]);
+                }else if((1<<bit & nums[i])!=0){
+                    memo[bit]=i;
                 }
             }
+
+            ans.push_back(remo_idx-i+1);
         }
 
-        int ans=INT_MAX;
-        for(int i=0;i<31;i++){
-            ans=min(ans, memo[i]);
-        }
-
-        return candidates.size()-ans;
+        reverse(ans.begin(),  ans.end());
+        return ans;
     }
 };
 // @lc code=end
@@ -52,11 +54,11 @@ public:
 
 /*
 // @lcpr case=start
-// [16,17,71,62,12,24,14]\n
+// [1,0,2,1,3]\n
 // @lcpr case=end
 
 // @lcpr case=start
-// [8,8]\n
+// [1,2]\n
 // @lcpr case=end
 
  */

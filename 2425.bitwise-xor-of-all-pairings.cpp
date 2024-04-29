@@ -1,8 +1,8 @@
 /*
- * @lc app=leetcode.cn id=2275 lang=cpp
+ * @lc app=leetcode.cn id=2425 lang=cpp
  * @lcpr version=30122
  *
- * [2275] 按位与结果大于零的最长组合
+ * [2425] 所有数对的异或和
  */
 
 
@@ -27,23 +27,20 @@ using namespace std;
 // @lc code=start
 class Solution {
 public:
-// 思路有点绕，用了抽屉原理，想一下写出来
-    int largestCombination(vector<int>& candidates) {
-        vector<int> memo(31);
-        for(int num:candidates){
-            for(int bit=0;bit<31;bit++){
-                if((num&1<<bit)==0){
-                    memo[bit]++;
-                }
+    int xorAllNums(vector<int>& nums1, vector<int>& nums2) {
+        int m=nums1.size(), n=nums2.size();
+        int ans=0;
+        if(n%2){
+            for(int num:nums1){
+                ans^=num;
             }
         }
-
-        int ans=INT_MAX;
-        for(int i=0;i<31;i++){
-            ans=min(ans, memo[i]);
+        if(m%2){
+            for(int num:nums2){
+                ans^=num;
+            }
         }
-
-        return candidates.size()-ans;
+        return ans;
     }
 };
 // @lc code=end
@@ -52,11 +49,11 @@ public:
 
 /*
 // @lcpr case=start
-// [16,17,71,62,12,24,14]\n
+// [2,1,3]\n[10,2,5,0]\n
 // @lcpr case=end
 
 // @lcpr case=start
-// [8,8]\n
+// [1,2]\n[3,4]\n
 // @lcpr case=end
 
  */
