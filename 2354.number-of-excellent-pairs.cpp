@@ -30,7 +30,7 @@ using namespace std;
 class Solution {
 public:
     long long countExcellentPairs(vector<int>& nums, int k) {
-        set<int> num_set;
+        set<int> num_set;// 不用顺序
         map<int,int> memo;
         for(int num:nums){
             num_set.insert(num);
