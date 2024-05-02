@@ -42,7 +42,7 @@ public:
                 if(num==0){
                     quit++;
                 }
-                num/=2;
+                num/=2; // 使用引用，直接修改
             }
 
             if(quit==nums.size()){
