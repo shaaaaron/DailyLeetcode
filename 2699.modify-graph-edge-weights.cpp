@@ -1,8 +1,8 @@
 /*
- * @lc app=leetcode.cn id=3108 lang=cpp
+ * @lc app=leetcode.cn id=2699 lang=cpp
  * @lcpr version=30122
  *
- * [3108] 带权图里旅途的最小代价
+ * [2699] 修改图中的边权
  */
 
 
@@ -27,7 +27,7 @@ using namespace std;
 // @lc code=start
 class Solution {
 public:
-    vector<int> minimumCost(int n, vector<vector<int>>& edges, vector<vector<int>>& query) {
+    vector<vector<int>> modifiedGraphEdges(int n, vector<vector<int>>& edges, int source, int destination, int target) {
         
     }
 };
@@ -37,11 +37,15 @@ public:
 
 /*
 // @lcpr case=start
-// 5\n[[0,1,7],[1,3,7],[1,2,1]]\n[[0,3],[3,4]]\n
+// 5\n[[4,1,-1],[2,0,-1],[0,3,-1],[4,3,-1]]\n0\n1\n5\n
 // @lcpr case=end
 
 // @lcpr case=start
-// 3\n[[0,2,7],[0,1,15],[1,2,6],[1,2,1]]\n[[1,2]]\n
+// 3\n[[0,1,-1],[0,2,5]]\n0\n2\n6\n
+// @lcpr case=end
+
+// @lcpr case=start
+// 4\n[[1,0,4],[1,2,3],[2,3,5],[0,3,-1]]\n0\n2\n6\n
 // @lcpr case=end
 
  */
