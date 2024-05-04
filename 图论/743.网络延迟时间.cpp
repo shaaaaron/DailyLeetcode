@@ -28,15 +28,18 @@ using namespace std;
 class Solution {
 public:
     int networkDelayTime(vector<vector<int>>& times, int n, int k) {
-        vector<unordered_map<int, int>> adj(n + 1);
+        vector<unordered_map<int, int>> adj(n + 1); // 外层应该是vector，不要用map。内层用mpa
         for (const auto& time : times) {
             int u = time[0], v = time[1], w = time[2];
             adj[u][v] = w;
         }
 
+        // 只要给函数里面给参数，外面可以auto
         auto comp = [](const pair<int, int>& a, const pair<int, int>& b) {
             return a.second > b.second;
         };// 使用 > 来保证最小的元素在优先队列的顶部
+
+        // 这里完全不用函数参数的显示声明
         priority_queue<pair<int, int>, vector<pair<int, int>>, decltype(comp)> pq(comp);// 存储起点到对应点的距离
         // decltype自动推断
 
@@ -47,7 +50,7 @@ public:
         pq.push({k, 0});
 
         while (!pq.empty()) {
-            auto [node, dist] = pq.top();
+            auto [node, dist] = pq.top(); // 自动解绑定
             pq.pop();
 
             if (visited[node]) continue;

@@ -39,8 +39,10 @@ public:
 
     void merge(int x, int y){
         p[find(x)]=p[find(y)];
+        // 实际上只需要 p[find(x)]=find(y);
     }
-
+    // 并查集的题目，主要是为了维护连通分支的点数/特殊点数/边数等性质
+    // 用一个vector维护，其中只使用并查集对应的根节点，相同的索引表示连通分支的信息
     vector<int> findRedundantConnection(vector<vector<int>>& edges) {
         int n=edges.size();
 
