@@ -1,8 +1,8 @@
 /*
- * @lc app=leetcode.cn id=1463 lang=cpp
+ * @lc app=leetcode.cn id=2799 lang=cpp
  * @lcpr version=30122
  *
- * [1463] 摘樱桃 II
+ * [2799] 统计完全子数组的数目
  */
 
 
@@ -27,8 +27,10 @@ using namespace std;
 // @lc code=start
 class Solution {
 public:
-    int cherryPickup(vector<vector<int>>& grid) {
+    int countCompleteSubarrays(vector<int>& nums) {
+        int n=nums.size();
 
+        
     }
 };
 // @lc code=end
@@ -37,19 +39,11 @@ public:
 
 /*
 // @lcpr case=start
-// [[3,1,1],[2,5,1],[1,5,5],[2,1,1]]\n
+// [1,3,1,2,2]\n
 // @lcpr case=end
 
 // @lcpr case=start
-// [[1,0,0,0,0,0,1],[2,0,0,0,0,3,0],[2,0,9,0,0,0,0],[0,3,0,5,4,0,0],[1,0,2,3,0,0,6]]\n
-// @lcpr case=end
-
-// @lcpr case=start
-// [[1,0,0,3],[0,0,0,3],[0,0,3,3],[9,0,3,3]]\n
-// @lcpr case=end
-
-// @lcpr case=start
-// [[1,1],[1,1]]\n
+// [5,5,5,5]\n
 // @lcpr case=end
 
  */

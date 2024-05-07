@@ -119,18 +119,52 @@ rand()/(RAND_MAX + 1.0) // 生成[0,1)d的随机浮点数
 ```
 
 ## 字符串
-常见的c++字符串操作包括：
-```c++
-string(n,'a')   // 构造字符串，n可以为0返回空串
-str.find('a')   // 查找字符，如果没找到返回npos。由于npos是无符号整数表示最大长度，如果和-1比较会返回true，但是最好写成npos
-```
-
 常见的python字符串操作包括：
 ```python
 n*"a"   # 构造字符串，n可以为0返回空串
 str.find('a')   # 查找字符，如果没找到返回-1.注意c++返回npos，python返回-1
 ```
+- 大小写转化：
+```python
+# 转换为小写
+lower = text.lower()
+# 转换为大写
+upper = text.upper()
+```
+- 字符串转数字
+```python
+str_num = "456"
+str_pi = "3.14159"
 
+# 字符串转数字
+num = int(str_num)
+pi = float(str_pi)
+```
+- 数字转字符串：
+```python
+num = 123
+pi = 3.14159
+
+# 数字转字符串
+str_num = str(num)
+str_pi = str(pi)
+```
+## 内置数组
+
+- 内置数组支持迭代器：C++中内置数组支持迭代器的使用，例如下面的方法是合理的
+```c++
+int arr[] = {1, 2, 3, 4, 5};
+for(auto it = std::begin(arr); it != std::end(arr); ++it) {
+    std::cout << *it << " ";
+}
+```
+理所当然的，你也可以使用algorithm/numeric中其他使用迭代器的函数对内置数组运算，如max_element/accumulare。
+
+- 内置数组初始化：可以使用 C++ 的 algorithm 库中的 `fill` 函数，
+```c++
+int dp[80][80][80];
+fill(&dp[0][0][0], &dp[0][0][0] + 80*80*80, INT_MIN);
+```
 ## algorithm
 
 - count：C++`count(s.begin(), a.end(), '1')`统计容器中指定字符的数量,python
