@@ -30,7 +30,7 @@ public:
     int longestSemiRepetitiveSubstring(string s) {
         int lt=0, rt=0;
         int ans=0;
-        // vector<int> memo(10);
+        
         int unq=0; // 相等的相邻字符的数量
         while(rt<s.size()){
             if(rt>lt && s[rt]==s[rt-1]){
