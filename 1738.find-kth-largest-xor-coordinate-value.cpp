@@ -63,11 +63,14 @@ public:
             if(j==lt+k) return pivot;
             if(j< lt+k) return qselect(k-(j-lt+1), j+1, rt);  
             return qselect(k, lt, j);
-                
-
         };
 
-        return qselect(res.size()-k, 0, res.size());
+        // return qselect(res.size()-k, 0, res.size());
+        
+        // 提供的是迭代器位置，在对应位置防止元素，其他位置不保证有序
+        // 速度远快于自己实现
+        nth_element(res.begin(), res.begin() + k - 1, res.end(), greater<int>());
+        return res[k - 1];
     }
 };
 // @lc code=end
