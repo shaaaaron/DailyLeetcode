@@ -188,6 +188,23 @@ fill(&dp[0][0][0], &dp[0][0][0] + 80*80*80, INT_MIN);
 ## 列表
 - 乘法运算：使用`[1]*n`可以正确，但是`[ [1,2], [3,4] ]*n`则不可以。原因是前者其中的对象是不可变，后者其中为可变对象。
 
+## 排序列表（SortedList）
+SortedList 是一种类似于列表的数据结构，它可以保持元素的有序性。它支持所有常见的列表操作，如索引、切片和迭代，但它的特殊之处在于它能够自动维护元素的顺序。底层实现基于平衡二叉树，使得插入、删除和查找操作的时间复杂度为 `O(logn)`。
+```python
+from sortedcontainers import SortedList
+
+sl = SortedList()
+
+sl.add(10)
+sl.add(5)
+
+print("位置 5:", sl.index(5))
+
+sl.remove(10) # 如果删除一个不存在的元素会导致异常
+
+print("索引 0:", sl[0])
+```
+
 ## 字典
 
 - 初始化：key和value可以是任意类型
@@ -202,13 +219,6 @@ fill(&dp[0][0][0], &dp[0][0][0] + 80*80*80, INT_MIN);
   - 如果key一定存在，使用`dict[key]`，可以用于修改
 
 - 删除键值：`del my_dict[key] `或者`memo.pop(key, None)`。前者不返回元素。如果不添加None，找不到元素会返回异常
-
-## vector
-- 使用`b.resize(n, 0)`进行resize，0只会被用来对新添加的元素初始化，如果resize被用来减小响亮的大小，多余的元素会被丢弃。
-- 可以直接`a=b;`进行拷贝构造赋值
-## np
-
-- `dp = np.full((n+5,n+5),0,dtype=int) `初始化显式写为int，否则可能返回浮点数出错
 
 
 
@@ -333,4 +343,11 @@ for (const auto &pair : umap) {
 for (auto it = myMap.begin(); it != myMap.end(); ++it) {
 std::cout << it->first << " => " << it->second << std::endl;
 }
+```
+# 算法
+## 二分
+python中的二分，和c++的二分类似
+``` python
+from bisect import bisect_right  # Add this import
+bisect_right(arr1, num) # 找到第一个严格大的元素下标
 ```
