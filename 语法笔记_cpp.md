@@ -40,6 +40,8 @@
 - c++ `reverse(a.begin(), a.end())`可以反转数组，请注意不需要赋值
 - `if(root)`就是判断root是不是空
 - c++迭代器可以通过`iter--`, `iter=iter-1`进行更改
+- `freopen("input.txt", "r", stdin);`允许你用cin从文件读入。但是注意，如果提交文件时需要注释这行代码
+
 
 ## 运算符优先级
 下面是c++运算符，优先级从高到低
