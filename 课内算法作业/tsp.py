@@ -10,14 +10,13 @@ def timer(func):
     """函数计时装饰器"""
     @functools.wraps(func)
     def wrapper_timer(*args, **kwargs):
-        start_time=time.perf_counter()
+        start_time = time.perf_counter()
         result = func(*args, **kwargs)
-        end_time=time.perf_counter()
-        run_time=end_time-start_time
+        end_time = time.perf_counter()
+        run_time = end_time - start_time
         print(f"运行时间：{run_time:.4f}秒")
         return result
     return wrapper_timer
-
 
 def haversine(lat1, lon1, lat2, lon2):
     R = 6371  # 地球半径，单位为公里
@@ -62,7 +61,7 @@ def read_tsp(filename):
             if line.strip() == "DISPLAY_DATA_SECTION" or line.strip() == "EOF":
                 break
             weights.extend(map(int, line.split()))
-    
+
     if edge_weight_type == "GEO":
         weights = np.zeros((dimension, dimension))
         for i in range(dimension):
@@ -78,7 +77,7 @@ def read_tsp(filename):
                 weights_matrix[j][i] = weights[k]
                 k += 1
         weights = weights_matrix
-    
+
     return weights
 
 @timer
@@ -89,22 +88,37 @@ def solve_tsp_with_gurobi(weights):
     n = weights.shape[0]
     vars = {}
     for i in range(n):
-        for j in range(i):
-            vars[i,j] = model.addVar(obj=weights[i,j], vtype=GRB.BINARY, name='e'+str(i)+'_'+str(j))
-            vars[j,i] = vars[i,j]
+        for j in range(n):
+            if i != j:
+                vars[i, j] = model.addVar(obj=weights[i, j], vtype=GRB.BINARY, name='e'+str(i)+'_'+str(j))
 
     for i in range(n):
-        model.addConstr(sum(vars[i,j] for j in range(n) if j != i) == 2)
+        model.addConstr(quicksum(vars[i, j] for j in range(n) if i != j) == 1)
+        model.addConstr(quicksum(vars[j, i] for j in range(n) if i != j) == 1)
 
-    model.setObjective(quicksum(vars[i,j] * weights[i,j] for i in range(n) for j in range(i)), GRB.MINIMIZE)
+    # Subtour elimination using MTZ constraints
+    u = {}
+    for i in range(n):
+        u[i] = model.addVar(lb=0, ub=n-1, vtype=GRB.CONTINUOUS, name='u'+str(i))
+    
+    for i in range(1, n):
+        for j in range(1, n):
+            if i != j:
+                model.addConstr(u[i] - u[j] + n * vars[i, j] <= n-1)
+    
+    model.setObjective(quicksum(vars[i, j] * weights[i, j] for i in range(n) for j in range(n) if i != j), GRB.MINIMIZE)
 
     model.optimize()
 
-    solution = model.getAttr('x', vars)
-    selected = [(i,j) for i,j in vars.keys() if solution[i,j] > 0.5]
-    print("Selected edges in the optimal tour:")
-    print(selected)
-    return model.objVal
+    if model.status == GRB.OPTIMAL:
+        solution = model.getAttr('x', vars)
+        selected = [(i, j) for i, j in vars.keys() if solution[i, j] > 0.5]
+        print("Selected edges in the optimal tour:")
+        print(selected)
+        return model.objVal
+    else:
+        print("No optimal solution found.")
+        return None
 
 @timer
 def solve_tsp_with_dp(weights):
@@ -135,14 +149,13 @@ def main():
 
     # warm up
     gurobi_cost = solve_tsp_with_gurobi(weights)
-    gurobi_cost = solve_tsp_with_gurobi(weights)
-    gurobi_cost = solve_tsp_with_gurobi(weights)
     dp_cost = solve_tsp_with_dp(weights)
     print(f"Gurobi cost: {gurobi_cost}")
     print(f"DP cost: {dp_cost}")
 
 if __name__ == '__main__':
     main()
+
 
 # python3 tsp.py --filename ./txt/bayg29.tsp;
 # python3 tsp.py --filename ./txt/bays29.tsp;
