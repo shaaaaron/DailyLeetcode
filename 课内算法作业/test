@@ -1,0 +1,62 @@
+def haversine(lat1, lon1, lat2, lon2):
+    R = 6371  # 地球半径，单位为公里
+    phi1 = math.radians(lat1)
+    phi2 = math.radians(lat2)
+    delta_phi = math.radians(lat2 - lat1)
+    delta_lambda = math.radians(lon2 - lon1)
+    a = math.sin(delta_phi/2)**2 + math.cos(phi1) * math.cos(phi2) * math.sin(delta_lambda/2)**2
+    c = 2 * math.atan2(math.sqrt(a), math.sqrt(1-a))
+    distance = R * c
+    return distance
+
+def read_tsp(filename):
+    with open(filename, 'r') as f:
+        lines = f.readlines()
+    
+    nodes = []
+    edge_weights = False
+    for line in lines:
+        if line.startswith("NODE_COORD_SECTION"):
+            edge_weights = True
+            continue
+        if edge_weights:
+            if line.strip() == "EOF":
+                break
+            parts = line.split()
+            index = int(parts[0])
+            lat = float(parts[1])
+            lon = float(parts[2])
+            nodes.append((lat, lon))
+
+    dimension = len(nodes)
+    weights = np.zeros((dimension, dimension))
+    for i in range(dimension):
+        for j in range(dimension):
+            if i != j:
+                weights[i][j] = haversine(nodes[i][0], nodes[i][1], nodes[j][0], nodes[j][1])
+
+    return weights
+
+def solve_tsp_with_gurobi(weights):
+    print("start solving tsp with gurobi...")
+    model = Model("tsp")
+
+    n = weights.shape[0]
+    vars = {}
+    for i in range(n):
+        for j in range(i):
+            vars[i,j] = model.addVar(obj=weights[i,j], vtype=GRB.BINARY, name='e'+str(i)+'_'+str(j))
+            vars[j,i] = vars[i,j]
+
+    for i in range(n):
+        model.addConstr(sum(vars[i,j] for j in range(n) if j != i) == 2)
+
+    model.setObjective(quicksum(vars[i,j] * weights[i,j] for i in range(n) for j in range(i)), GRB.MINIMIZE)
+
+    model.optimize()
+
+    solution = model.getAttr('x', vars)
+    selected = [(i,j) for i,j in vars.keys() if solution[i,j] > 0.5]
+    print("Selected edges in the optimal tour:")
+    print(selected)
+    return selected
