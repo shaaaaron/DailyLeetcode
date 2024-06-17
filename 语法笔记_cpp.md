@@ -218,6 +218,18 @@ fill(&dp[0][0][0], &dp[0][0][0] + 80*80*80, INT_MIN);
 
 
 # 数据结构
+
+## 双端队列
+`deque`是c++实现的双端队列，作为`stack`,`queue`等数据结构的底层容器。
+
+- 利用`deque`构造容器：你可以直接使用`deque`的迭代器对vector、string进行初始化，例如
+```c++
+string(dq.begin(), dq.end());
+vector(dq.begin(), dq.end());
+
+// 将 deque 的内容追加到 vector 的末尾
+vec.insert(vec.end(), dq.begin(), dq.end());
+```
 ## 栈
 查看栈顶元素之前需要保证栈非空
 

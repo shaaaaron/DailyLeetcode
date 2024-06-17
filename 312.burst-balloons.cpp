@@ -34,7 +34,7 @@ public:
         int n=nums.size();
         vector<vector<int>> a (n, vector<int>(n,0));
 
-        for(int i=0;i<n;i++) a[i][i]=nums[i];
+        // for(int i=0;i<n;i++) a[i][i]=0;
 
         for(int d_ij=1;d_ij<=n-1;d_ij++){ // 注意从1而不是0开始
             for(int i=0,j=i+d_ij;j<n;i++,j++){
