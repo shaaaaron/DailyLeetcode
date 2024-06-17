@@ -28,30 +28,25 @@ using namespace std;
 class Solution {
 public:
     // 考虑哪个气球是最后戳破的
-    // a[i][j] 表示开区间(i,j)戳破其中的所有气球（不包括边界），能取得的最大硬币数
+    // dp[i][j] 表示开区间(i,j)戳破其中的所有气球（不包括边界），能取得的最大硬币数
     // 给左边右边分别添加一个虚拟气球
     int maxCoins(vector<int>& nums) {
+        nums.insert(nums.begin(),1);
+        nums.push_back(1);
+
         int n=nums.size();
-        vector<vector<int>> a (n, vector<int>(n,0));
+        vector<vector<int>> dp(n, vector<int>(n,0));
 
-        // for(int i=0;i<n;i++) a[i][i]=0;
-
-        for(int d_ij=1;d_ij<=n-1;d_ij++){ // 注意从1而不是0开始
+        for(int d_ij=2;d_ij<=n-1;d_ij++){
             for(int i=0,j=i+d_ij;j<n;i++,j++){
-                for(int tmp=i;tmp<=j;tmp++){
+                for(int tmp=i+1;tmp<j;tmp++){
                     // tmp是最后炸爆的
-                    if(tmp==i){
-                        a[i][j]=max(a[i][j], nums[tmp]*a[i+1][j]);// 越界
-                    }else if(tmp==j){
-                        a[i][j]=max(a[i][j], nums[tmp]*a[i][j-1]);
-                    }else{
-                        a[i][j]=max(a[i][j], nums[tmp]*a[i][tmp-1]+nums[tmp]*a[tmp+1][j]);
-                    }
+                    dp[i][j]=max(dp[i][j], dp[i][tmp]+ dp[tmp][j]+nums[i]*nums[j]*nums[tmp]);
                 }
             }
         }
 
-        return a[0][n-1];
+        return dp[0][n-1];
     }
 };
 // @lc code=end
