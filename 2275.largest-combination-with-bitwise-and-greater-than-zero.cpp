@@ -29,7 +29,7 @@ class Solution {
 public:
 // 思路有点绕，用了抽屉原理，想一下写出来
     int largestCombination(vector<int>& candidates) {
-        vector<int> memo(31);
+        vector<int> memo(31); // 利用最多31位（除去符号位）
         for(int num:candidates){
             for(int bit=0;bit<31;bit++){
                 if((num&1<<bit)==0){

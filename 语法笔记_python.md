@@ -306,21 +306,26 @@ dq.push_back(), dq.push_front(), dq.pop_back(), dq.pop_front()
 dq.size(), dq.front(), dq.end()
 ```
 
-## 有序集合
-python中标准库没有 有序集合，C++中可以通过set<int\>实现有序集合，底层是红黑树实现
-```c++
-set<int> rec;
-auto iter=rec.lower_bound(x); // 同样可以使用lower_bound返回迭代器
-rec.insert(1);    //  插入元素，如果已有则不会操作
-rec.erase(1);     // 删除对应值的元素
-s1.erase(s1.begin()); // 删除迭代器指向的元素
-rec.find(1)!=rec.end(); // 查找元素是否存在
-rec.clear();      // 清空
-rec.lower_bound();
-rec.upper_bound(); // 内部就有二分的接口，返回迭代器，分别指向向第一个不小于给定值的元素和第一个大于给定值的元素
-```
-- 如果erase的元素不存在不会报错
+## 集合
+python中标准库只支持set，不是有序集合。
 
+```python
+# 初始化和清空
+st = set()
+st.clear()
+
+# 增删查
+st.add(1)
+st.remove(1)
+if 1 in st:
+    pass
+
+# 进行集合运算
+st1 & st2
+st1 | st2
+st1 - st2
+```
+- set只支持可哈希对象，（如tuple而非list）
 ## map
 c++中的map分为map和unordered_map。
 

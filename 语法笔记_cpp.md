@@ -1,41 +1,4 @@
-# python
-
-## 基础
-- str.substr(str.size()) 对应空字符串，不会报错
-- 注意累加、相乘int会不会越界，需要需要使用long long
-- 力口的判题策略是相同类生命一次，但是方法调用多次。因此使用全局变量需要重新初始化
-- 全局变量在函数中使用需要global，否则相当于重新定义变量
-- Python 中调用类函数需要使用self.前缀，并在函数参数中传入self
-- 由于python中没有设置return的参数类型。所以`return visited[state]==1` 不能不要==1，否则返回的就是1(int)而不是true(bool)
-- python中位操作和c++相同
-- python没有三目运算符`?:`，但你可以使用行内的`if else`
-- python中可以使用形如`if 0<=i+di<m and 0<=j+dj<n:`的判断，c++中则不可
-- 迷宫/地图四个方向的遍历可以使用元组的迭代，`for di,dj in [(-1,0), (1,0), (0,1), (0,-1)]:`
-- python中列表和np都是浅拷贝
-- python3.6(?)之后支持下划线分割整数，增强了可读性，但leetcode不支持
-- python在range逆序使用时，最后添加一个-1，最右边元素同样无法取到
-- 如果结果要模$10^9+7$，则可以`(int)(1E9+7.1)`进行初始化
-  - 结果和中间结果计算的时候都需要%PRIME，并且使用longlong防止加法和乘法导致的溢出。如果减法使用(a-b+PRIME)%PRIME保证结果是正数
-- 提交leetcode时需要注释cout，否则会超时
-- substr长度为非负数，因为类型是size_t
-- str.substr(1); 默认substr到最后
-- python中使用`chr`和`ord`能够进行字符和ascii序号的转化
-- 字符转int，例如'0'转为0. 
-    - c++使用str[i]-'0'。
-    - python使用int(str[i])，可以直接类型转化
-- python中由于数学运算不严格限制宽度，因此没有INT_MAX
-- 在本地/2是浮点数除法，在leetcode上是整数除法，可能是因为return的是整数除法的结果，由于python版本产生了不同的结果。建议整数除法//2,浮点数除法/2.(有小数点)
-- 类中的函数声明和调用都需要self
-- `for j in range(len(nums)):` 如果循环如上通过range遍历，那么在循环中修改j没用！
-- 下面是一个lambda函数的写法，应该包含
-    ```
-    auto getTwoNum = [&]() -> tuple<int, int> { // 访问当前作用域中的所有变量，返回值写法有点奇怪
-        int y = s.top(); s.pop();
-        int x = s.top(); s.pop();
-        return {x, y}; // 返回一个包含两个整数的tuple
-    };
-    ```
-- 1<<n就是$2^{n}$.c++中的左移位数必须是非负数，不能左移-1。位移运算符的优先级相当低
+# C++
 - C++ 的vector可以`ans.insert(ans.end(),left.begin(),left.end());`来把一个vector追加到另一个后面
 - c++ `reverse(a.begin(), a.end())`可以反转数组，请注意不需要赋值
 - `if(root)`就是判断root是不是空
@@ -327,6 +290,8 @@ rec.lower_bound();
 rec.upper_bound(); // 内部就有二分的接口，返回迭代器，分别指向向第一个不小于给定值的元素和第一个大于给定值的元素
 ```
 - 如果erase的元素不存在不会报错
+- 不能使用引用访问set:`for(auot& ele: st)`会报错，原因似乎是因为set要求不重，而非vector可直接修改
+- 查看元素是否存在:c++20后支持`st.contains(ele)`，之前需要使用`st.find`
 
 ## map
 c++中的map分为map和unordered_map。
@@ -341,7 +306,7 @@ unordered_map
 
 不同的接口在于map提供了lower_bound和upper_bound。
 
-两种边里方法如下
+两种遍历方法如下
 ```c++
 for (const auto &pair : umap) {
     cout << pair.first << " => " << pair.second << '\n';
@@ -351,3 +316,4 @@ for (auto it = myMap.begin(); it != myMap.end(); ++it) {
 cout << it->first << " => " << it->second << endl;
 }
 ```
+- 第一次访问：如果`key`不在`memo`，第一次访问`memo[key]`尝试使用声明`memo`时的默认函数进行初始化；
