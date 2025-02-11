@@ -326,6 +326,14 @@ st1 | st2
 st1 - st2
 ```
 - set只支持可哈希对象，（如tuple而非list）
+
+## Counter
+python中的特殊字典，支持计数
+```python
+from collections import Counter # 首字母大写
+a = Counter("as")   # 可以直接输入字符串，对其中的字符进行计数。任意可迭代对象也可以初始化
+a["1"]              # 访问不存在的元素不报错
+```
 ## map
 c++中的map分为map和unordered_map。
 
@@ -356,3 +364,5 @@ python中的二分，和c++的二分类似
 from bisect import bisect_right  # Add this import
 bisect_right(arr1, num) # 找到第一个严格大的元素下标
 ```
+
+#
